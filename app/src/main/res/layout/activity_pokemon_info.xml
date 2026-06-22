@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pokedex_main"
+    tools:context=".PokemonInfo">
+
+    <!-- Box for pokemon image -->
+    <ImageView
+        android:id="@+id/Pokemon_box"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:background="@drawable/pokemon_box"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintVertical_bias="0.105" />
+
+    <!-- Pokedex on top of the page -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00277e"
+        android:fontFamily="sans-serif-medium"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="32dp"
+        android:paddingBottom="16dp"
+        android:text="Pokédex"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="-16dp" />
+
+
+    <!-- Back button -->
+    <Button
+        android:id="@+id/backbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        app:backgroundTint="@null"
+        android:background="@drawable/pokebutton"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.94"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Pokemon_box"
+        app:layout_constraintVertical_bias="0.906" />
+
+    <!-- Pokemon's name and pokeball -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/Pokemon_box"
+        app:layout_constraintEnd_toEndOf="@+id/Pokemon_box"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Pokemon_box"
+        app:layout_constraintTop_toTopOf="@+id/Pokemon_box"
+        app:layout_constraintVertical_bias="1.0">
+
+        <!-- Pokeball next to Pokemon's name -->
+        <ImageView
+            android:id="@+id/pokeballicon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="5dp"
+            app:srcCompat="@drawable/pokeballone" />
+
+        <!-- Pokemon's name -->
+        <TextView
+            android:id="@+id/pokemon_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:paddingVertical="8dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="8dp"
+            android:text="Pokemon's name"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <!-- Pokemon's image -->
+    <ImageView
+        android:id="@+id/pokemon_pic"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:padding="40dp"
+        android:src="@drawable/unown"
+        app:layout_constraintBottom_toBottomOf="@+id/Pokemon_box"
+        app:layout_constraintEnd_toEndOf="@+id/Pokemon_box"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Pokemon_box"
+        app:layout_constraintTop_toTopOf="@+id/Pokemon_box"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!-- Pokedex number and Type -->
+    <LinearLayout
+        android:id="@+id/pokemon_data"
+        android:layout_width="280dp"
+        android:layout_height="160dp"
+        android:background="#0a3593"
+        android:padding="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@+id/Pokemon_box"
+        app:layout_constraintStart_toStartOf="@+id/Pokemon_box"
+        app:layout_constraintTop_toBottomOf="@+id/pokemon_pic">
+
+        <!-- Pokedex number -->
+        <TextView
+            android:id="@+id/pokedex_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="No.0000"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <!-- Type -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Type title -->
+            <TextView
+                android:id="@+id/title_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="#ffbd59"
+                android:textSize="16sp"
+                android:text="Type: "/>
+
+            <!-- Primary Type -->
+            <TextView
+                android:id="@+id/primary_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="sans-serif-black"
+                android:textColor="@color/white"
+                android:textSize="8sp"
+                android:padding="4dp"
+                android:layout_marginHorizontal="2dp"
+                android:background="@drawable/type_normal"
+                android:text="NORMAL"/>
+
+            <!-- Secondary Type -->
+            <TextView
+                android:id="@+id/secondary_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="sans-serif-black"
+                android:textColor="@color/white"
+                android:textSize="8sp"
+                android:padding="4dp"
+                android:layout_marginHorizontal="2dp"
+                android:background="@drawable/type_normal"
+                android:text="NORMAL"/>
+
+        </LinearLayout>
+
+        <!-- Stats box -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <!-- Left column -->
+            <LinearLayout
+                android:layout_width="132dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!-- HP -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical">
+
+                    <!-- HP title -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="#ffbd59"
+                        android:textSize="16sp"
+                        android:text="HP: "/>
+
+                    <!-- HP stats -->
+                    <TextView
+                        android:id="@+id/hpstats"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:text="0"/>
+
+                </LinearLayout>
+
+                <!-- ATK -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical">
+
+                    <!-- ATK title -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="#ffbd59"
+                        android:textSize="16sp"
+                        android:text="Attack: "/>
+
+                    <!-- ATK stats -->
+                    <TextView
+                        android:id="@+id/atkstats"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:text="0"/>
+
+                </LinearLayout>
+
+                <!-- DEF -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical">
+
+                    <!-- DEF title -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="#ffbd59"
+                        android:textSize="16sp"
+                        android:text="Defense: "/>
+
+                    <!-- DEF stats -->
+                    <TextView
+                        android:id="@+id/defstats"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:text="0"/>
+
+                </LinearLayout>
+    
+                <!-- Total -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical">
+
+                    <!-- Total title -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="#ffbd59"
+                        android:textSize="16sp"
+                        android:text="Total: "/>
+
+                    <!-- Total stats -->
+                    <TextView
+                        android:id="@+id/totalstats"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:text="0"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <!-- Right column -->
+            <LinearLayout
+                android:layout_width="132dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!-- SPATK -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical">
+
+                    <!-- SPATK title -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="#ffbd59"
+                        android:textSize="16sp"
+                        android:text="Sp. Attack: "/>
+
+                    <!-- SPATK stats -->
+                    <TextView
+                        android:id="@+id/spatkstats"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:text="0"/>
+
+                </LinearLayout>
+
+                <!-- SPDEF -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical">
+
+                    <!-- SPDEF title -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="#ffbd59"
+                        android:textSize="16sp"
+                        android:text="Sp. Defense: "/>
+
+                    <!-- SPDEF stats -->
+                    <TextView
+                        android:id="@+id/spdefstats"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:text="0"/>
+
+                </LinearLayout>
+
+                <!-- SPD -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical">
+
+                    <!-- SPDEF title -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="#ffbd59"
+                        android:textSize="16sp"
+                        android:text="Speed: "/>
+
+                    <!-- SPDEF stats -->
+                    <TextView
+                        android:id="@+id/spdstats"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:text="0"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
